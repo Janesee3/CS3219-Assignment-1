@@ -36,9 +36,14 @@ public class InputHandler {
 		// Prompt for titles
 		System.out.println(MSG_INPUT_TITLE);
 		
+		// Skip newline so that scanning starts properly 
+		scanner.nextLine();
+		
 		// Read, parse and store
 		while (counter < numLines) {
 			tokenizedTitles.add(readLineAndParse(scanner));
+			System.out.println(tokenizedTitles.get(counter));
+			counter++;
 		}
 	}
 	
