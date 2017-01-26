@@ -19,16 +19,15 @@ public class Processor {
 		ArrayList<String> result = toString(filteredTitles);
 		// Sort Alphabetically
 		sort(result);
-		System.out.println(result);
 		return result;
 	}
 	
 	
 	// Filter out titles that start with words found in ignoreWords
-	private ArrayList<ArrayList<String>> filter(	ArrayList<ArrayList<String>> shiftedTitles,
-										ArrayList<String> ignoreWords ) {
-		System.out.println(ignoreWords);
-		for(int counter = 0; counter < shiftedTitles.size(); counter++){
+	private ArrayList<ArrayList<String>> filter(ArrayList<ArrayList<String>> shiftedTitles,
+												ArrayList<String> ignoreWords ) {
+		//System.out.println(ignoreWords);
+		for(int counter = 0; counter < shiftedTitles.size(); counter++) {
 			if(ignoreWords.stream().anyMatch(shiftedTitles.get(counter).get(0)::equalsIgnoreCase)){
 				shiftedTitles.remove(counter);
 			}

@@ -14,14 +14,14 @@ public class InputHandler {
 	 *  each representing an input movie title 
 	 * @param tokenizedTitles 	Reference to an ArrayList of string arrays that will be used to store
 	 * 							the tokenised input titles
-	 * @param ignoreList		Reference to an ArrayList of input words to ignore
+	 * @param ignoreWords		Reference to an ArrayList of input words to ignore
 	 */
 	public static void readAndStoreInput(	ArrayList<ArrayList<String>> tokenizedTitles, 
-											ArrayList<String> ignoreList) {
+											ArrayList<String> ignoreWords) {
 		
 		Scanner scanner = new Scanner(System.in);
 		readTitlesInput(tokenizedTitles, scanner);
-		readIgnoreWordsInput(ignoreList, scanner);
+		readIgnoreWordsInput(ignoreWords, scanner);
 	}
 	
 	private static void readTitlesInput(ArrayList<ArrayList<String>> tokenizedTitles,
@@ -42,18 +42,18 @@ public class InputHandler {
 		// Read, parse and store
 		while (counter < numLines) {
 			tokenizedTitles.add(readLineAndParse(scanner));
-			System.out.println(tokenizedTitles.get(counter));
 			counter++;
 		}
 	}
 	
-	private static void readIgnoreWordsInput(ArrayList<String> ignoreList, Scanner scanner) {
+	private static void readIgnoreWordsInput(ArrayList<String> ignoreWords, Scanner scanner) {
 		
 		// Prompt for words to ignore
 		System.out.println(MSG_INPUT_IGNORE_WORDS);
 		
 		// Read, parse and update
-		ignoreList = readLineAndParse(scanner);
+		ArrayList<String> processedIgnoreWords = (readLineAndParse(scanner));
+		ignoreWords.addAll(processedIgnoreWords);
 	}
 	
 	// Reads in a line through the input scanner, parse the words with regex "\\s+",

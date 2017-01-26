@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class OutputHandler {
 	
 	private static final String MSG_OUTPUT = "Output:";
+	
 	// Prints out line by line each element in the outputTitles
 	public static void printOutput(ArrayList<String> outputTitles) {
 		
