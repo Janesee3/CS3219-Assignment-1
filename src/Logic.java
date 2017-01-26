@@ -21,6 +21,7 @@ public class Logic {
 		// Process titles
 		Processor processor = new Processor(ignoreWords);
 		ArrayList<String> processedTitles = processor.processTitles(shiftedTitles);
+//		System.out.println(processedTitles);
 		
 		// Set output
 		outputTitles = processedTitles;

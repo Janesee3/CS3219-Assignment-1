@@ -7,7 +7,8 @@ public class CircularShift {
 		ArrayList<ArrayList<String>> shifted = new ArrayList<ArrayList<String>>();
 		for(int counter = 0; counter < tokenizedTitles.size(); counter++){
 			for(int cycle = 0; cycle < tokenizedTitles.get(counter).size(); cycle++){
-				ArrayList<String> result = shift(tokenizedTitles.get(counter), 1);
+				ArrayList<String> result = new ArrayList<String>();
+				result.addAll(shift(tokenizedTitles.get(counter), 1));
 				shifted.add(result);
 			}
 		}
